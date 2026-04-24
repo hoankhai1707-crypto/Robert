@@ -1,0 +1,98 @@
+You are running Robert's automated morning research and content workflow.
+Today's date is: MORNING_DATE_PLACEHOLDER
+Run time: 4:00 AM
+
+## YOUR MISSION
+
+Complete all 6 steps below in order. Do not stop early. Log each step as you complete it.
+
+---
+
+## STEP 1 — GOOGLE TRENDS RESEARCH (via WebSearch)
+
+Search for the following 5 queries and collect the top 5 trending subtopics/ideas from each:
+
+1. Search: "trending AI video templates 2026 YouTube TikTok"
+2. Search: "best selling Canva templates 2026 Etsy digital products"
+3. Search: "AI tools for content creators trending 2026"
+4. Search: "AI Shopify digital products trending social media 2026"
+5. Search: "trending digital products 2026 notion templates AI"
+
+Compile a master list called TRENDING_TOPICS with the top 10 most promising ideas overall. For each include:
+- Topic name
+- Platform(s) it's trending on
+- Why it's relevant to templates or AI video content
+- Content idea or template concept
+
+---
+
+## STEP 2 — CREATE CLICKUP TASKS
+
+Use mcp__ClickUp__clickup_get_workspace_hierarchy to find the workspace and a suitable list.
+
+Then for EACH of the top 10 trending topics from Step 1, create a ClickUp task using mcp__ClickUp__clickup_create_task with:
+- Name: "🔥 [Topic Name] — Template/Video Idea"
+- Description: Include the platform, why it's trending, and the content/template concept
+- Priority: high for top 5, normal for the rest
+- Tags: include "morning-research", "AI", and the relevant platform name
+
+---
+
+## STEP 3 — CREATE CANVA TEMPLATE
+
+Pick the single BEST trending topic from Step 1 (the one with highest commercial potential).
+
+Use mcp__Canva__generate-design to create a professional template design for it. Use these parameters:
+- Design type appropriate to the topic (e.g. social media post, YouTube thumbnail, Etsy listing banner, or presentation slide)
+- Include a compelling title, visual layout suitable for the niche, and a professional color scheme
+- After generating, use mcp__Canva__export-design to get the export URL/file
+
+---
+
+## STEP 4 — CREATE FIGMA TEMPLATE
+
+Use mcp__Figma__generate_diagram to create a wireframe or layout diagram for a second trending topic (pick the 2nd best from your list).
+
+Create a clean diagram showing:
+- Template layout/structure
+- Key design elements and text zones
+- Color palette recommendations
+- Usage notes
+
+---
+
+## STEP 5 — UPLOAD SUMMARY TO GOOGLE DRIVE
+
+Use mcp__Google-Drive__create_file to upload a summary document named:
+"Morning Research — MORNING_DATE_PLACEHOLDER"
+
+The document content should include:
+- All 10 trending topics with full details
+- Which topic was used for the Canva template and the export link
+- Which topic was used for the Figma diagram
+- Links to the ClickUp tasks created
+- Recommendations for Robert's next 3 content pieces
+
+---
+
+## STEP 6 — SEND GMAIL NOTIFICATION
+
+Use mcp__Gmail__create_draft to draft an email summary to Robert with:
+- Subject: "🌅 Morning Research Ready — MORNING_DATE_PLACEHOLDER"
+- Body: A clean summary of all 10 trending topics, the 2 templates created (Canva + Figma links), and Google Drive link
+- Keep it scannable with bullet points and emoji section headers
+
+After creating the draft, confirm completion.
+
+---
+
+## FINAL STEP — COMPLETION REPORT
+
+After all 6 steps are done, output a brief completion report:
+- How many ClickUp tasks were created
+- Name of the Canva template created
+- Name of the Figma diagram created
+- Google Drive file link
+- Gmail draft status
+
+The workflow is complete. Robert will be notified.
