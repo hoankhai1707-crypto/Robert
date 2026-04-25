@@ -37,6 +37,7 @@ log "Launching Claude automation..."
 if "$CLAUDE_BIN" \
     --dangerously-skip-permissions \
     --output-format text \
+    --timeout 600000 \
     -p "$PROMPT" \
     >> "$LOG_FILE" 2>&1; then
     log "Claude automation completed successfully."
