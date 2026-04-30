@@ -28,7 +28,7 @@ Compile a master list called TRENDING_TOPICS with the top 10 most promising idea
 
 ## STEP 2 — CREATE CLICKUP TASKS
 
-Use mcp__ClickUp__clickup_get_workspace_hierarchy to find the workspace and a suitable list.
+Use list_id "901817699621" (Daily research list in Team Space → AI Content).
 
 Then for EACH of the top 10 trending topics from Step 1, create a ClickUp task using mcp__ClickUp__clickup_create_task with:
 - Name: "🔥 [Topic Name] — Template/Video Idea"
@@ -77,7 +77,8 @@ The document content should include:
 
 ## STEP 6 — SEND GMAIL NOTIFICATION
 
-Use mcp__Gmail__create_draft to draft an email summary to Robert with:
+Use mcp__Gmail__create_draft to draft an email summary with:
+- to: ["hoankhai1707@gmail.com"]
 - Subject: "🌅 Morning Research Ready — MORNING_DATE_PLACEHOLDER"
 - Body: A clean summary of all 10 trending topics, the 2 templates created (Canva + Figma links), and Google Drive link
 - Keep it scannable with bullet points and emoji section headers
