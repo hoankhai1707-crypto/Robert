@@ -1,0 +1,11 @@
+{
+  "niches": [
+    {"category": "technology", "seed_keywords": ["AI tools", "new gadgets", "tech news"]},
+    {"category": "personal_finance_literacy", "seed_keywords": ["saving money tips", "side hustle"]},
+    {"category": "health_fitness", "seed_keywords": ["home workout", "healthy habits"]},
+    {"category": "travel", "seed_keywords": ["hidden travel gems", "cheap flights"]},
+    {"category": "food", "seed_keywords": ["easy recipes", "food hacks"]},
+    {"category": "science_curiosity", "seed_keywords": ["space discovery", "science facts"]},
+    {"category": "productivity", "seed_keywords": ["productivity apps", "morning routine"]}
+  ]
+}

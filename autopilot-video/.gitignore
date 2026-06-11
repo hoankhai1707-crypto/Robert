@@ -1,0 +1,7 @@
+.env
+logs/
+outputs/
+__pycache__/
+*.pyc
+assets/bgm/*.mp3
+assets/fonts/*.ttf
