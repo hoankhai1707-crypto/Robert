@@ -106,6 +106,12 @@ Claude must proactively invoke the relevant skill below based on the task contex
 - Starting any multi-step implementation, refactor, or debugging session
 - Deciding how to structure automation (blocking vs non-blocking), delegation, or retries
 
+### `motion-animations` (project skill: .claude/skills/motion-animations/)
+**Auto-invoke when:**
+- Adding animations, transitions, gestures, scroll effects, or micro-interactions to frontend work
+- User mentions motion, framer-motion, or animating UI
+- Building any React/JS component where elements enter, exit, or respond to interaction
+
 ---
 
 ## General Behavior
