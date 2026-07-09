@@ -112,6 +112,13 @@ Claude must proactively invoke the relevant skill below based on the task contex
 - User mentions motion, framer-motion, or animating UI
 - Building any React/JS component where elements enter, exit, or respond to interaction
 
+### `ui-ux-pro-max` (project skill: .claude/skills/ui-ux-pro-max/)
+**Auto-invoke when:**
+- Designing or building any UI: landing pages, dashboards, e-commerce, SaaS, portfolios, mobile apps
+- Choosing styles, color palettes, typography, or chart types
+- Reviewing/fixing UI code for UX, accessibility, or responsive issues
+- Works with `frontend-design` (aesthetic direction) and `motion-animations` (animation)
+
 ---
 
 ## General Behavior
