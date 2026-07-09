@@ -1,0 +1,33 @@
+{
+  "owner": "Robert",
+  "business": "Autopilot faceless short-video channel network",
+  "goal": "Publish 3 trend-driven short videos per day across YouTube Shorts, Facebook Reels, and Instagram Reels with minimal manual work",
+  "audience": {
+    "language": "en",
+    "regions": ["US", "UK", "AU", "CA"],
+    "age_range": "18-45"
+  },
+  "brand_voice": "Energetic, curious, fact-forward. Hook in the first 2 seconds. No clickbait that the video can't pay off.",
+  "video_format": {
+    "duration_seconds": [30, 60],
+    "orientation": "landscape",
+    "resolution": "1280x720",
+    "voice": "en-US-AriaNeural",
+    "subtitles": true,
+    "bgm": true
+  },
+  "platforms": ["youtube", "facebook", "instagram"],
+  "publishing_schedule": "Daily, morning run via main_pipeline.py",
+  "constraints": {
+    "daily_cost_limit_usd": 5.0,
+    "max_videos_per_day": 3,
+    "human_approval_required": true,
+    "approval_timeout_minutes": 30
+  },
+  "content_rules": [
+    "Only niches present in config/niche_whitelist.json",
+    "No medical, financial, or legal advice framing",
+    "No copyrighted footage — Pexels stock only",
+    "No politics, no tragedy exploitation"
+  ]
+}
