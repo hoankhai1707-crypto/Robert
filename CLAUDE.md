@@ -88,6 +88,24 @@ Claude must proactively invoke the relevant skill below based on the task contex
 - Starting work in a new project that has no CLAUDE.md
 - User asks to document the project or set up Claude context for a codebase
 
+### `skill-extractor` (project skill: .claude/skills/skill-extractor/)
+**Auto-invoke when:**
+- User says "learn from this repo", "extract skills/patterns from X", "study how X does Y"
+- A cloned/external codebase should be turned into reusable knowledge
+- A hard problem was just solved by a method worth keeping
+
+### `skill-updater` (project skill: .claude/skills/skill-updater/)
+**Auto-invoke when:**
+- A finished task taught something a future session would otherwise rediscover
+- New information contradicts or supersedes an existing skill
+- The same ad-hoc fix happened twice
+- User says "remember this", "update your skills", "from now on do X"
+
+### `problem-solving` (project skill: .claude/skills/problem-solving/)
+**Auto-invoke when:**
+- Starting any multi-step implementation, refactor, or debugging session
+- Deciding how to structure automation (blocking vs non-blocking), delegation, or retries
+
 ---
 
 ## General Behavior
@@ -98,6 +116,7 @@ Claude must proactively invoke the relevant skill below based on the task contex
 - After any code change: auto-run `verify` or `run` if there is a UI or behavior to confirm
 - After implementing features: auto-run `code-review` at low effort before declaring done
 - For research questions: always prefer `deep-research` over answering from memory alone
+- At the end of any task that produced new learnings: run `skill-updater` (async — never mid-task)
 
 ---
 
