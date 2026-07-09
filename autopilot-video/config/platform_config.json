@@ -1,0 +1,43 @@
+{
+  "platforms": {
+    "youtube_long": {
+      "width": 1920,
+      "height": 1080,
+      "orientation": "landscape",
+      "aspect_ratio": "16:9",
+      "max_duration_seconds": 600,
+      "preferred_duration_seconds": [60, 120],
+      "pexels_orientation": "landscape"
+    },
+    "youtube_shorts": {
+      "width": 1080,
+      "height": 1920,
+      "orientation": "portrait",
+      "aspect_ratio": "9:16",
+      "max_duration_seconds": 60,
+      "preferred_duration_seconds": [30, 60],
+      "pexels_orientation": "portrait"
+    },
+    "facebook_reels": {
+      "width": 1080,
+      "height": 1920,
+      "orientation": "portrait",
+      "aspect_ratio": "9:16",
+      "max_duration_seconds": 90,
+      "preferred_duration_seconds": [30, 60],
+      "pexels_orientation": "portrait"
+    },
+    "instagram_reels": {
+      "width": 1080,
+      "height": 1920,
+      "orientation": "portrait",
+      "aspect_ratio": "9:16",
+      "max_duration_seconds": 90,
+      "preferred_duration_seconds": [30, 60],
+      "pexels_orientation": "portrait"
+    }
+  },
+  "default_voice": "en-US-AriaNeural",
+  "default_fps": 24,
+  "default_platform": "youtube_shorts"
+}

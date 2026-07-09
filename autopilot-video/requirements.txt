@@ -9,7 +9,8 @@ requests>=2.31.0
 edge-tts>=6.1.0
 faster-whisper>=1.0.0
 
-# Thumbnails
+# Thumbnails (cv2 frame extraction + PIL rendering)
+opencv-python-headless>=4.8.0
 pillow>=10.0.0
 
 # Approval gate

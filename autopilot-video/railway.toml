@@ -1,0 +1,12 @@
+[build]
+builder = "NIXPACKS"
+
+[build.nixpacksPlan.phases.setup]
+nixPkgs = ["python311", "ffmpeg"]
+
+[deploy]
+startCommand = "python scripts/main_pipeline.py"
+healthcheckPath = "/health"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3

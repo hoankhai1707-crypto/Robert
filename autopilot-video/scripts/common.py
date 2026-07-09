@@ -1,8 +1,6 @@
-"""Shared helpers for the autopilot-video pipeline.
+"""Shared helpers for the autopilot-video pipeline (v2).
 
-Stdlib-only on purpose: every script must be able to run --dry-run without
-any third-party package installed. Heavy deps are lazy-imported inside the
-scripts that need them.
+Stdlib-only at module level — scripts that need third-party deps import them lazily.
 """
 from __future__ import annotations
 
@@ -17,6 +15,13 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 LOGS_DIR = PROJECT_ROOT / "logs"
 OUTPUTS_DIR = PROJECT_ROOT / "outputs"
 CONFIG_DIR = PROJECT_ROOT / "config"
+
+# v2 data directories
+DATA_DIR = PROJECT_ROOT / "data"
+TRENDS_DIR = DATA_DIR / "trends"
+NICHES_DIR = DATA_DIR / "selected_niches"
+SCRIPTS_DATA_DIR = DATA_DIR / "scripts"
+PROMPTS_DIR = PROJECT_ROOT / "prompts"
 
 # Pricing per 1K tokens (USD) — keep in sync with .claude/rules/cost-rules.md
 MODEL_PRICING = {
@@ -85,16 +90,14 @@ def log_cost(script: str, model: str, input_tokens: int, output_tokens: int) -> 
 
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
     data = read_costs()
-    data["entries"].append(
-        {
-            "ts": datetime.now().isoformat(timespec="seconds"),
-            "script": script,
-            "model": model,
-            "input_tokens": input_tokens,
-            "output_tokens": output_tokens,
-            "cost_usd": round(total, 6),
-        }
-    )
+    data["entries"].append({
+        "ts": datetime.now().isoformat(timespec="seconds"),
+        "script": script,
+        "model": model,
+        "input_tokens": input_tokens,
+        "output_tokens": output_tokens,
+        "cost_usd": round(total, 6),
+    })
     data["total_usd"] = round(sum(e["cost_usd"] for e in data["entries"]), 6)
 
     fd, tmp = tempfile.mkstemp(dir=LOGS_DIR, suffix=".tmp")
@@ -106,6 +109,8 @@ def log_cost(script: str, model: str, input_tokens: int, output_tokens: int) -> 
           f"(today: ${data['total_usd']:.4f}/{daily_cost_limit():.2f})")
     return total
 
+
+# ── v1 output helpers (kept for backward compat) ─────────────────────────────
 
 def write_output(name: str, payload) -> Path:
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -121,6 +126,37 @@ def read_output(name: str):
         sys.exit(EXIT_MISSING_CONFIG)
     return json.loads(path.read_text())
 
+
+# ── v2 data helpers ───────────────────────────────────────────────────────────
+
+def write_data_json(path: Path, payload) -> Path:
+    """Atomically write JSON to any path; creates parent dirs."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(dir=path.parent, suffix=".tmp")
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
+    os.replace(tmp, path)
+    return path
+
+
+def read_data_json(path: Path):
+    """Read JSON from path; exit(3) if missing."""
+    if not path.exists():
+        print(f"Missing expected input file: {path}", file=sys.stderr)
+        sys.exit(EXIT_MISSING_CONFIG)
+    return json.loads(path.read_text())
+
+
+def read_prompt(name: str) -> str:
+    """Read a prompt template from prompts/ directory; exit(3) if missing."""
+    path = PROMPTS_DIR / name
+    if not path.exists():
+        print(f"Missing prompt template: {path}", file=sys.stderr)
+        sys.exit(EXIT_MISSING_CONFIG)
+    return path.read_text()
+
+
+# ── misc ──────────────────────────────────────────────────────────────────────
 
 def is_dry_run(argv: list[str] | None = None) -> bool:
     return "--dry-run" in (argv if argv is not None else sys.argv[1:])

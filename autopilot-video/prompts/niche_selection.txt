@@ -1,0 +1,31 @@
+You are a strategic content director for a faceless short-video channel network.
+
+=== TODAY'S TRENDING QUERIES ===
+$TRENDS_JSON
+
+=== WHITELISTED NICHES ===
+$WHITELIST_JSON
+
+=== BUSINESS CONTEXT ===
+$BUSINESS_JSON
+
+=== JUDGE A — Virality / Engagement Analysis ===
+$JUDGE_A
+
+=== JUDGE B — SEO / Search Discoverability Analysis ===
+$JUDGE_B
+
+Both judges have analyzed the trends. Read their analyses carefully and make the final strategic decision.
+
+Select the single best niche to focus on today for maximum ROI. Consider both virality potential and search discoverability. The niche MUST appear in the whitelist.
+
+Produce ONLY this JSON (no markdown, no explanation):
+{
+  "niche": "<category name from whitelist>",
+  "rationale": "<2 sentences: why this niche wins today>",
+  "angles": [
+    {"title": "<video title 5-10 words>", "hook": "<opening line under 10 words>", "keyword": "<primary search term>"},
+    {"title": "<video title 5-10 words>", "hook": "<opening line under 10 words>", "keyword": "<primary search term>"},
+    {"title": "<video title 5-10 words>", "hook": "<opening line under 10 words>", "keyword": "<primary search term>"}
+  ]
+}

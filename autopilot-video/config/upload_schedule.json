@@ -1,0 +1,16 @@
+{
+  "schedule": {
+    "enabled": true,
+    "timezone": "Asia/Ho_Chi_Minh",
+    "daily_run_times": ["07:00", "14:00", "20:00"],
+    "max_videos_per_day": 3
+  },
+  "rate_limits": {
+    "per_platform_per_hour": 5,
+    "platforms": ["youtube_long", "youtube_shorts", "facebook_reels", "instagram_reels"]
+  },
+  "retry": {
+    "max_attempts": 3,
+    "backoff_seconds": [2, 4, 8]
+  }
+}

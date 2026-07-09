@@ -23,14 +23,19 @@ Haiku for everything else.** Never use Fable for bulk generation.
 
 ## Pipeline Order (do not reorder)
 
-1. `scripts/trend_researcher.py` — pulls rising Google Trends queries per whitelisted niche → `outputs/trends_YYYY-MM-DD.json`
-2. `scripts/niche_selector.py` — Fable 5 picks the best niche + 3 video angles → `outputs/selection_YYYY-MM-DD.json`
-3. `scripts/script_generator.py` — Sonnet 4.6 writes 3 scripts concurrently → `outputs/scripts_YYYY-MM-DD.json`
-4. `scripts/video_assembler.py` — Pexels clips + edge-tts voiceover + whisper subs + bgm → `outputs/videos/final_*.mp4`
-5. `scripts/thumbnail_gen.py` — PIL thumbnail per video → `outputs/thumbnails/*.jpg`
-6. `scripts/approval_gate.py` — Telegram preview with Approve/Reject buttons
-7. `scripts/multi_uploader.py` — YouTube + Facebook Reels + Instagram Reels → `logs/uploads_YYYY-MM-DD.json`
-8. `scripts/main_pipeline.py` — orchestrator + FastAPI server (`/health`, `POST /run`)
+1. `scripts/trend_researcher.py` — rising Google Trends (Vietnam + Worldwide) per whitelisted niche → `data/trends/trends_YYYY-MM-DD.json`
+2. `scripts/niche_selector.py` — Haiku judges (virality + SEO) then Fable 5 final decision, prompt from `prompts/niche_selection.txt` → `data/selected_niches/niches_YYYY-MM-DD.json`
+3. `scripts/script_generator.py` — Sonnet 4.6 writes 3 scripts concurrently, prompt from `prompts/script_generation.txt` → `data/scripts/script_<slug>_<NNN>.json`
+4. `scripts/video_assembler.py` — Pexels clips + edge-tts voiceover + whisper subs + bgm, platform-aware resolution from `config/platform_config.json` → `outputs/videos/final_<slug>_001.mp4`
+5. `scripts/thumbnail_gen.py` — cv2 frame at 2s + Haiku caption + PIL render → `outputs/thumbnails/thumb_<slug>_001.jpg`
+6. `scripts/approval_gate.py` — Telegram preview with Approve/Reject buttons (60-min timeout) → `data/approved_YYYY-MM-DD.json`; rejected videos → `outputs/rejected/`
+7. `scripts/multi_uploader.py` — YouTube + Facebook Reels + Instagram Reels, rate limit + retries from `config/upload_schedule.json` → `logs/uploads_YYYY-MM-DD.json`
+8. `scripts/main_pipeline.py` — orchestrator + FastAPI server (`/health`, `POST /run`) + Telegram summary
+
+## Platform Resolutions (config/platform_config.json)
+
+- `youtube_long`: 1920×1080 landscape
+- `youtube_shorts` / `facebook_reels` / `instagram_reels`: 1080×1920 portrait
 
 ## Trend Result Format
 

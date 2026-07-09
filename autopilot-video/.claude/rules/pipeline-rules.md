@@ -14,15 +14,22 @@
 
 ## Data Contracts
 
-- `trend_researcher.py` → `outputs/trends_YYYY-MM-DD.json`: list of trend dicts (format in CLAUDE.md).
-- `niche_selector.py` → `outputs/selection_YYYY-MM-DD.json`:
-  `{"niche": str, "rationale": str, "angles": [{"title": str, "hook": str, "keyword": str} x3]}`
-- `script_generator.py` → `outputs/scripts_YYYY-MM-DD.json`: list of 3 script objects:
+- `trend_researcher.py` → `data/trends/trends_YYYY-MM-DD.json`: list of trend dicts
+  (format in CLAUDE.md, plus `"region": "Vietnam"|"Worldwide"`).
+- `niche_selector.py` → `data/selected_niches/niches_YYYY-MM-DD.json`:
+  `{"niche": str, "rationale": str, "angles": [{"title": str, "hook": str, "keyword": str} x3],
+    "judge_a_analysis": str, "judge_b_analysis": str, "selected_at": str}`
+- `script_generator.py` → `data/scripts/script_<slug>_<NNN>.json` (one file per script):
   `{"slug": str, "title": str, "hook": str, "platform": str, "description": str, "tags": [str],
-    "segments": [{"voiceover": str, "broll_query": str} x4-6]}`
-- `video_assembler.py` → `outputs/videos/final_<slug>_<NNN>.mp4`
-- `thumbnail_gen.py` → `outputs/thumbnails/<slug>.jpg`
+    "segments": [{"voiceover": str, "broll_query": str} x4-6], "generated_at": str}`
+- `video_assembler.py` → `outputs/videos/final_<slug>_001.mp4`
+  (resolution per platform from `config/platform_config.json`)
+- `thumbnail_gen.py` → `outputs/thumbnails/thumb_<slug>_001.jpg`
+- `approval_gate.py` → `data/approved_YYYY-MM-DD.json`:
+  `{"approved": [slug], "rejected": [slug], "decided_at": str}`;
+  rejected videos move to `outputs/rejected/`
 - `multi_uploader.py` → appends to `logs/uploads_YYYY-MM-DD.json`
+  (rate limit + retry policy from `config/upload_schedule.json`)
 
 ## Retries & Rate Limits
 
@@ -32,6 +39,11 @@
 
 ## Approval
 
-- Telegram approval timeout = `APPROVAL_TIMEOUT_MINUTES` from `.env` (default 30).
+- Telegram approval timeout = `APPROVAL_TIMEOUT_MINUTES` from `.env` (default 60).
 - On timeout: log a warning "Timeout - auto-approving" and proceed (auto-approve).
-- A rejected video is skipped, never uploaded, and left in `outputs/videos/` for review.
+- A rejected video is skipped, never uploaded, and moved to `outputs/rejected/` for review.
+
+## Uploads
+
+- Rate limit: max 5 uploads per platform per hour (`config/upload_schedule.json`).
+- Upload retries: 3 attempts with exponential backoff (2s, 4s, 8s).
