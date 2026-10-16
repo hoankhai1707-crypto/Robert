@@ -180,6 +180,15 @@
       "ts": 1792135734631,
       "event": "append",
       "hash": "f17a6a6d7c77e1f5f7f2229c0292ed469e8408db381dfeae5c3bdfe5d4a908a2"
+    },
+    {
+      "seq": 20,
+      "length": 21,
+      "headHash": "sha256:b08e1d1f70e87772fac04cae64fa7b45180679fc5c4f500a0f9a5ab7f919c579",
+      "prevAnchorHash": "f17a6a6d7c77e1f5f7f2229c0292ed469e8408db381dfeae5c3bdfe5d4a908a2",
+      "ts": 1792135751303,
+      "event": "append",
+      "hash": "1ffc87396bf7774771b86a78db4755b9a67075219701933c368d6c3d0daea491"
     }
   ]
 }

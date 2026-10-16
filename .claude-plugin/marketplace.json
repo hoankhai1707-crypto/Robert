@@ -116,7 +116,7 @@
       "name": "animate",
       "source": {
         "source": "git-subdir",
-        "url": "cth9191/animate",
+        "url": "https://github.com/cth9191/animate.git",
         "path": "plugins/animate"
       },
       "description": "Procedural canvas animation in any style (sketchbook, crosshatch, riso, cut paper) with synthesized score.",
@@ -231,7 +231,7 @@
       "name": "herk-edit",
       "source": {
         "source": "git-subdir",
-        "url": "nateherkai/herk-edit-kit",
+        "url": "https://github.com/nateherkai/herk-edit-kit.git",
         "path": ".claude/skills"
       },
       "description": "Talking-head editing pipeline: cut silences/mistakes, story edit, beats, short-form edit. (Its old hyperframes/gsap copies excluded; uses hyperframes + gsap-skills plugins.) Full pipeline runtime: clone the kit to Robert\\use\\09_Dev\\kits\\herk-edit-kit.",
@@ -534,7 +534,7 @@
       "name": "prompts.chat",
       "source": {
         "source": "git-subdir",
-        "url": "f/prompts.chat",
+        "url": "https://github.com/f/prompts.chat.git",
         "path": "plugins/claude/prompts.chat"
       },
       "description": "prompts.chat: search/improve thousands of prompts and skills (remote MCP).",
