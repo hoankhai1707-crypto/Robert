@@ -36,7 +36,7 @@ Prompt-pattern sources (use, cite which one helped):
 | Source | Use for | How to reach it |
 |---|---|---|
 | prompts.chat | ready prompts by role/task | `prompts.chat:prompt-lookup` (MCP) |
-| OpenAI cookbook prompting guides (GPT-5 / GPT-4.1 guide, meta-prompting, Optimize_Prompts) | structure, agentic instructions, eval loops | PC: `Robert\use\04_Prompt-Library\repos\openai-cookbook` |
+| OpenAI cookbook prompting guides (GPT-5 / GPT-4.1 guide, meta-prompting, Optimize_Prompts) | structure, agentic instructions, eval loops | PC: `Robert\use\04_Prompt-Library\repos\openai-cookbook-prompting-guides` |
 | system-prompts-and-models-of-ai-tools | how production agents (Cursor, Devin, Lovable, Manus…) structure system prompts and tool rules | PC: `…\repos\system-prompts-and-models-of-ai-tools` |
 | ChatGPT-Shortcut prompt cards (en/vi/zh) | short task prompts by category | PC: `…\repos\ChatGPT-Shortcut\src\data\cards` |
 | charlie-motion:motion-prompt-writer | 8-part motion prompts | skill |
