@@ -230,10 +230,11 @@
     {
       "name": "herk-edit",
       "source": {
-        "source": "github",
-        "repo": "nateherkai/herk-edit-kit"
+        "source": "git-subdir",
+        "url": "nateherkai/herk-edit-kit",
+        "path": ".claude/skills"
       },
-      "description": "Talking-head editing pipeline: cut silences/mistakes, story edit, beats, short-form edit. (Its old hyperframes/gsap copies excluded; uses hyperframes + gsap-skills plugins.)",
+      "description": "Talking-head editing pipeline: cut silences/mistakes, story edit, beats, short-form edit. (Its old hyperframes/gsap copies excluded; uses hyperframes + gsap-skills plugins.) Full pipeline runtime: clone the kit to Robert\\use\\09_Dev\\kits\\herk-edit-kit.",
       "category": "R3-cut-remix",
       "tags": [
         "edit",
@@ -241,16 +242,16 @@
         "shorts"
       ],
       "skills": [
-        "./.claude/skills/cut-silences",
-        "./.claude/skills/cut-mistakes",
-        "./.claude/skills/edit-video",
-        "./.claude/skills/short-form-edit",
-        "./.claude/skills/video-storytelling",
-        "./.claude/skills/hyperframes-video-beats",
-        "./.claude/skills/style-library",
-        "./.claude/skills/make-a-video",
-        "./.claude/skills/motion-showreel",
-        "./.claude/skills/website-to-hyperframes"
+        "./cut-silences",
+        "./cut-mistakes",
+        "./edit-video",
+        "./short-form-edit",
+        "./video-storytelling",
+        "./hyperframes-video-beats",
+        "./style-library",
+        "./make-a-video",
+        "./motion-showreel",
+        "./website-to-hyperframes"
       ]
     },
     {

@@ -50,7 +50,7 @@ HyperFrames = long-form, Remotion = captions/charts/Shorts; third-party footage 
 | R2-full-video | `map-animation-skills` | iart-ai/map-animation-skills | iart: Vox-style map animation. |
 | R2-full-video | `srt-whiteboard` | geeklee/srt-whiteboard-animation | SRT subtitles -> hand-drawn whiteboard animation MP4 (stream pen strokes). Note: skill UI text is Chinese. |
 | R3-cut-remix | `b-roll-skills` | iart-ai/b-roll-skills | iart: b-roll for talking-head videos, drawn from what is said. |
-| R3-cut-remix | `herk-edit` | nateherkai/herk-edit-kit | Talking-head editing pipeline: cut silences/mistakes, story edit, beats, short-form edit. (Its old hyperframes/gsap copies excluded; uses hyperframes + gsap-skills plugins.) |
+| R3-cut-remix | `herk-edit` | nateherkai/herk-edit-kit/.claude/skills | Talking-head editing pipeline: cut silences/mistakes, story edit, beats, short-form edit. (Its old hyperframes/gsap copies excluded; uses hyperframes + gsap-skills plugins.) |
 | R3-cut-remix | `lower-thirds-skills` | iart-ai/lower-thirds-skills | iart: transparent lower thirds for OBS/Premiere/Resolve. |
 | R3-cut-remix | `text-message-video-skills` | iart-ai/text-message-video-skills | iart: text-message story videos. |
 | R3-cut-remix | `tiktok-video-skills` | iart-ai/tiktok-video-skills | iart: short-form video, caption animation, countdown, lower thirds. |
