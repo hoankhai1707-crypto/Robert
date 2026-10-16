@@ -1,0 +1,9 @@
+{
+  "name": "robert-core",
+  "description": "Auto skill router, prompt optimizer and daily-video flow for Khai.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Robert (Khai)"
+  },
+  "license": "MIT"
+}

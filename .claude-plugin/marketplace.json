@@ -1,0 +1,547 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "robert-skills",
+  "description": "Khai (Robert)'s curated video/motion/web/prompt skills. Entries point to upstream repos; roles R0-R9 in category.",
+  "owner": {
+    "name": "Robert (Khai)",
+    "url": "https://github.com/hoankhai1707-crypto"
+  },
+  "plugins": [
+    {
+      "name": "robert-core",
+      "source": "./plugins/robert-core",
+      "description": "Khai's router: auto-picks the right skill per task (no slash commands), optimizes prompts into briefs, and runs the daily-video flow.",
+      "category": "R0-core",
+      "tags": [
+        "router",
+        "prompts",
+        "daily-video"
+      ]
+    },
+    {
+      "name": "higgsfield",
+      "source": {
+        "source": "github",
+        "repo": "higgsfield-ai/skills"
+      },
+      "description": "Higgsfield (official): images/video generation, Soul ID characters, brand kit, video explainer, YouTube thumbnails, product photoshoot (pairs with the Higgsfield connector).",
+      "category": "R1-generate",
+      "tags": [
+        "higgsfield",
+        "images",
+        "characters"
+      ],
+      "skills": [
+        "./higgsfield-generate",
+        "./higgsfield-soul-id",
+        "./higgsfield-product-photoshoot",
+        "./higgsfield-brandkit",
+        "./higgsfield-marketplace-cards",
+        "./higgsfield-websites",
+        "./higgsfield-video-explainer",
+        "./higgsfield-youtube-thumbnail"
+      ]
+    },
+    {
+      "name": "hyperframes",
+      "source": {
+        "source": "github",
+        "repo": "heygen-com/hyperframes"
+      },
+      "description": "HyperFrames (HeyGen): HTML->MP4 engine. MAIN engine for long-form explainers. Includes house-style doctrine skills.",
+      "category": "R8-base-engine",
+      "tags": [
+        "hyperframes",
+        "engine",
+        "long-form"
+      ],
+      "skills": [
+        "./.claude/skills/motion-doctrine",
+        "./.claude/skills/cut-the-curve",
+        "./.claude/skills/seam-craft",
+        "./.claude/skills/oversized-cursor",
+        "./.claude/skills/captions-overlay",
+        "./.claude/skills/changelog-video"
+      ]
+    },
+    {
+      "name": "remotion-skills",
+      "source": {
+        "source": "github",
+        "repo": "remotion-dev/skills"
+      },
+      "description": "Official Remotion skills. Engine for captions, data charts and Shorts.",
+      "category": "R8-base-engine",
+      "tags": [
+        "remotion",
+        "engine",
+        "shorts",
+        "captions"
+      ],
+      "skills": [
+        "./skills/"
+      ]
+    },
+    {
+      "name": "gsap-skills",
+      "source": {
+        "source": "github",
+        "repo": "greensock/gsap-skills"
+      },
+      "description": "Official GSAP skills (core, timeline, ScrollTrigger, plugins, React).",
+      "category": "R8-base-engine",
+      "tags": [
+        "gsap",
+        "animation-library"
+      ]
+    },
+    {
+      "name": "srt-whiteboard",
+      "source": {
+        "source": "github",
+        "repo": "geeklee/srt-whiteboard-animation"
+      },
+      "description": "SRT subtitles -> hand-drawn whiteboard animation MP4 (stream pen strokes). Note: skill UI text is Chinese.",
+      "category": "R2-full-video",
+      "tags": [
+        "whiteboard",
+        "srt",
+        "doodle"
+      ],
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "animate",
+      "source": {
+        "source": "git-subdir",
+        "url": "cth9191/animate",
+        "path": "plugins/animate"
+      },
+      "description": "Procedural canvas animation in any style (sketchbook, crosshatch, riso, cut paper) with synthesized score.",
+      "category": "R2-full-video",
+      "tags": [
+        "explainer",
+        "procedural",
+        "canvas"
+      ]
+    },
+    {
+      "name": "charlie-motion",
+      "source": {
+        "source": "github",
+        "repo": "charlie947/motion-graphics-skills"
+      },
+      "description": "15 code-only motion skills: vox-explainer, animated-chart, milestone-reveal, reel-export, motion-prompt-writer, brand-intake...",
+      "category": "R2-full-video",
+      "tags": [
+        "vox",
+        "explainer",
+        "prompts"
+      ],
+      "skills": [
+        "./skills/"
+      ]
+    },
+    {
+      "name": "barty-motion",
+      "source": {
+        "source": "github",
+        "repo": "Barty-Bart/motion-graphics"
+      },
+      "description": "Explainers (default/engaging/high-energy), motion b-roll, SAM2 object separation, sound-effects pass.",
+      "category": "R2-full-video",
+      "tags": [
+        "explainer",
+        "b-roll",
+        "sfx"
+      ],
+      "skills": [
+        "./skills/"
+      ]
+    },
+    {
+      "name": "explainer-video-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/explainer-video-skills"
+      },
+      "description": "iart: explainer, whiteboard, diagram, isometric, wrapped videos.",
+      "category": "R2-full-video",
+      "tags": [
+        "iart",
+        "explainer",
+        "whiteboard"
+      ]
+    },
+    {
+      "name": "manim-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/manim-skills"
+      },
+      "description": "iart: Manim math/diagram animation.",
+      "category": "R2-full-video",
+      "tags": [
+        "iart",
+        "manim"
+      ]
+    },
+    {
+      "name": "kinetic-typography-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/kinetic-typography-skills"
+      },
+      "description": "iart: kinetic typography.",
+      "category": "R2-full-video",
+      "tags": [
+        "iart",
+        "typography"
+      ]
+    },
+    {
+      "name": "data-animation-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/data-animation-skills"
+      },
+      "description": "iart: chart animation, animated infographics, presentation video.",
+      "category": "R2-full-video",
+      "tags": [
+        "iart",
+        "data"
+      ]
+    },
+    {
+      "name": "map-animation-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/map-animation-skills"
+      },
+      "description": "iart: Vox-style map animation.",
+      "category": "R2-full-video",
+      "tags": [
+        "iart",
+        "maps"
+      ]
+    },
+    {
+      "name": "herk-edit",
+      "source": {
+        "source": "github",
+        "repo": "nateherkai/herk-edit-kit"
+      },
+      "description": "Talking-head editing pipeline: cut silences/mistakes, story edit, beats, short-form edit. (Its old hyperframes/gsap copies excluded; uses hyperframes + gsap-skills plugins.)",
+      "category": "R3-cut-remix",
+      "tags": [
+        "edit",
+        "cut",
+        "shorts"
+      ],
+      "skills": [
+        "./.claude/skills/cut-silences",
+        "./.claude/skills/cut-mistakes",
+        "./.claude/skills/edit-video",
+        "./.claude/skills/short-form-edit",
+        "./.claude/skills/video-storytelling",
+        "./.claude/skills/hyperframes-video-beats",
+        "./.claude/skills/style-library",
+        "./.claude/skills/make-a-video",
+        "./.claude/skills/motion-showreel",
+        "./.claude/skills/website-to-hyperframes"
+      ]
+    },
+    {
+      "name": "youtube-video-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/youtube-video-skills"
+      },
+      "description": "iart: audiogram, YouTube intro/outro.",
+      "category": "R3-cut-remix",
+      "tags": [
+        "iart",
+        "youtube"
+      ]
+    },
+    {
+      "name": "tiktok-video-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/tiktok-video-skills"
+      },
+      "description": "iart: short-form video, caption animation, countdown, lower thirds.",
+      "category": "R3-cut-remix",
+      "tags": [
+        "iart",
+        "shorts",
+        "tiktok"
+      ]
+    },
+    {
+      "name": "b-roll-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/b-roll-skills"
+      },
+      "description": "iart: b-roll for talking-head videos, drawn from what is said.",
+      "category": "R3-cut-remix",
+      "tags": [
+        "iart",
+        "b-roll"
+      ]
+    },
+    {
+      "name": "lower-thirds-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/lower-thirds-skills"
+      },
+      "description": "iart: transparent lower thirds for OBS/Premiere/Resolve.",
+      "category": "R3-cut-remix",
+      "tags": [
+        "iart",
+        "lower-thirds"
+      ]
+    },
+    {
+      "name": "text-message-video-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/text-message-video-skills"
+      },
+      "description": "iart: text-message story videos.",
+      "category": "R3-cut-remix",
+      "tags": [
+        "iart",
+        "story"
+      ]
+    },
+    {
+      "name": "whaley-motion",
+      "source": {
+        "source": "github",
+        "repo": "whaleyxbt/claude-motion"
+      },
+      "description": "Remotion taste rules, render review-loop, procedural sound design, web-sims (needs repo clone for sims/ scripts).",
+      "category": "R4-shorts-films",
+      "tags": [
+        "remotion",
+        "review",
+        "sound"
+      ],
+      "skills": [
+        "./.claude/skills/motion-design",
+        "./.claude/skills/review-loop",
+        "./.claude/skills/sound-design",
+        "./.claude/skills/web-sims"
+      ]
+    },
+    {
+      "name": "remotion-motion-graphics",
+      "source": {
+        "source": "github",
+        "repo": "haidrrrry/claude-remotion-skill"
+      },
+      "description": "Remotion motion graphics: intros, outros, logo animation, reels, promos.",
+      "category": "R4-shorts-films",
+      "tags": [
+        "remotion",
+        "shorts"
+      ],
+      "skills": [
+        "./remotion-motion-graphics"
+      ]
+    },
+    {
+      "name": "javascript-animation-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/javascript-animation-skills"
+      },
+      "description": "iart: zero-asset canvas films + code-made soundtrack.",
+      "category": "R4-shorts-films",
+      "tags": [
+        "iart",
+        "canvas",
+        "music"
+      ]
+    },
+    {
+      "name": "generative-illustration-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/generative-illustration-skills"
+      },
+      "description": "iart: generative illustration.",
+      "category": "R4-shorts-films",
+      "tags": [
+        "iart",
+        "generative"
+      ],
+      "skills": [
+        "./skills/"
+      ]
+    },
+    {
+      "name": "motion-design-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/motion-design-skills"
+      },
+      "description": "iart: animation principles, art direction, beat-sync editing, logo animation, shot composition...",
+      "category": "R4-shorts-films",
+      "tags": [
+        "iart",
+        "motion-design"
+      ]
+    },
+    {
+      "name": "motion-dev-animations",
+      "source": {
+        "source": "github",
+        "repo": "199-biotechnologies/motion-dev-animations-skill"
+      },
+      "description": "Motion.dev (Framer Motion successor) 120fps animations for React/Next/Svelte/Astro.",
+      "category": "R5-web-app",
+      "tags": [
+        "motion.dev",
+        "react",
+        "web"
+      ],
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "lottie-motion-design",
+      "source": {
+        "source": "github",
+        "repo": "LottieFiles/motion-design-skill"
+      },
+      "description": "LottieFiles motion-design principles for UI/Lottie animation.",
+      "category": "R5-web-app",
+      "tags": [
+        "lottie",
+        "ui"
+      ],
+      "skills": [
+        "./skills/motion-design"
+      ]
+    },
+    {
+      "name": "web-animation-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/web-animation-skills"
+      },
+      "description": "iart: 60fps, accessible, SVG, Lottie, GSAP web, page transitions, micro-interactions.",
+      "category": "R5-web-app",
+      "tags": [
+        "iart",
+        "web"
+      ]
+    },
+    {
+      "name": "webgl-animation-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/webgl-animation-skills"
+      },
+      "description": "iart: three.js, shaders/GLSL, particle systems.",
+      "category": "R5-web-app",
+      "tags": [
+        "iart",
+        "webgl",
+        "3d"
+      ]
+    },
+    {
+      "name": "product-launch-motion",
+      "source": {
+        "source": "github",
+        "repo": "AbubakrChan/product-launch-motion"
+      },
+      "description": "URL -> 60fps product launch film (HTML springs, beat-synced music, SFX).",
+      "category": "R6-promo",
+      "tags": [
+        "launch",
+        "promo"
+      ],
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "howseen-motion-design",
+      "source": {
+        "source": "github",
+        "repo": "howseen-ai/claude-motion-design"
+      },
+      "description": "Code-only motion design pipeline: launch films, showreels, promos, 'remake this video'.",
+      "category": "R6-promo",
+      "tags": [
+        "promo",
+        "showreel"
+      ],
+      "skills": [
+        "./skill/motion-design"
+      ]
+    },
+    {
+      "name": "ad-video-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/ad-video-skills"
+      },
+      "description": "iart: ad creative, launch, testimonial videos.",
+      "category": "R6-promo",
+      "tags": [
+        "iart",
+        "ads"
+      ]
+    },
+    {
+      "name": "ecommerce-video-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/ecommerce-video-skills"
+      },
+      "description": "iart: product demo, promo, photo slideshow.",
+      "category": "R6-promo",
+      "tags": [
+        "iart",
+        "ecommerce"
+      ]
+    },
+    {
+      "name": "freelance-motion-skills",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/freelance-motion-skills"
+      },
+      "description": "iart: creative brief, brand motion guidelines, client revisions, pricing, delivery specs.",
+      "category": "R6-promo",
+      "tags": [
+        "iart",
+        "freelance"
+      ]
+    },
+    {
+      "name": "prompts.chat",
+      "source": {
+        "source": "git-subdir",
+        "url": "f/prompts.chat",
+        "path": "plugins/claude/prompts.chat"
+      },
+      "description": "prompts.chat: search/improve thousands of prompts and skills (remote MCP).",
+      "category": "R9-prompts",
+      "tags": [
+        "prompts",
+        "library"
+      ]
+    }
+  ]
+}
