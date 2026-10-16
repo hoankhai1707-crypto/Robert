@@ -1,0 +1,6 @@
+# Agent/plugin runtime state (not part of the marketplace)
+.claude-flow/
+.swarm/
+ruvector.db
+*.db-shm
+*.db-wal
